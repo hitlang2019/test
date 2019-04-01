@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+     	   http://www.springframework.org/schema/context/spring-context.xsd
+     	    http://www.springframework.org/schema/mvc 
+           http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!-- 第一种  默认的handlerMapping -->
+	<bean name="/hello.action" class="cn.hxzy.HelloController"></bean>
+
+
+	<!-- 第二种  -->
+	<bean id="ItemsController1" name="/queryItems.action" class="cn.hxzy.ItemsController1" />
+
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		
+		<!-- setter注入 -->
+		<property name="mappings"> <!-- Propertities   mappings-->
+			
+			<props>
+				<prop key="/queryItems1.action">ItemsController1</prop>
+				
+				<prop key="/queryItems2.action">ItemsController1</prop>
+			
+			</props>
+		
+		</property>
+
+	</bean>
+
+
+</beans>
