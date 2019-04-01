@@ -9,9 +9,7 @@
      	    http://www.springframework.org/schema/mvc 
            http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <!-- 第一种  默认的handlerMapping -->
-	<bean name="/hello.action" class="cn.hxzy.HelloController"></bean>
-
+  
 
 	<!-- 第二种  -->
 	<bean id="ItemsController1" name="/queryItems.action" class="cn.hxzy.ItemsController1" />
